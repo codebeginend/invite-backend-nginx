@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Шаги сборки проекта
                 sh 'echo "Building the project"'
-                sh 'docker-compose build'
+                sh 'docker-compose --env-file .env.dev build'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 // Шаги развертывания
                 sh 'echo "Deploying the project"'
-                sh 'docker-compose up -d'
+                sh 'docker-compose --env-file .env.dev up -d'
             }
         }
     }
