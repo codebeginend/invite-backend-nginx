@@ -6,7 +6,7 @@ services:
     container_name: backend-nginx
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - /opt/invite-backend-jenkins/jenkins_home/workspace/invite_prod_nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 80:80
     networks:
